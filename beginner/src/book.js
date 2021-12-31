@@ -1,6 +1,8 @@
 import React from "react";
 
-const Book = ({ img, title, author, children }) => {
+const Book = (props) => {
+  console.log(props);
+  const { img, title, author, children } = props;
   const clickHandler = (e) => {
     // console.log(author);
     console.log(e.target);
