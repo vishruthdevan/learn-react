@@ -7,10 +7,10 @@ const UseStateBasics = () => {
   // console.log(value, handler);
   const [text, setText] = useState("random title");
   const handleClick = () => {
-    if (text == "random title") {
+    if (text === "random title") {
       setText("check title");
     } else {
-      setText("rando  m title");
+      setText("random title");
     }
   };
 
