@@ -1,6 +1,5 @@
 # react-learn
-All mini projects that I do to learn react js and js in general
-
+Source code for the react course by John Smilga
 
 # Getting Started with Create React App
 
