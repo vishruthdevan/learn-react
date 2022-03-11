@@ -19,7 +19,7 @@ const ControlledInputs = () => {
                 email,
             };
             setPeople((people) => {
-                return [...person, person];
+                return [...people, person];
             });
             setFirstName("");
             setEmail("");
