@@ -3,19 +3,31 @@ import Modal from "./Modal";
 import { data } from "../../../data";
 // reducer function
 
+const reducer = (state, action) => {
+    if (action.type === "TESTING") {
+        return {
+            ...state,
+            people: data,
+            isModalOpen: true,
+            modalContent: "item added",
+        };
+    }
+    throw new Error("no matching action type");
+};
+const defaultState = {
+    people: data,
+    isModalOpen: true,
+    modalContent: "hello world",
+};
+
 const Index = () => {
-    const reducer = (state, action) => {};
-    const defaultState = {
-        people: data,
-        isModalOpen: true,
-        modalContent: "hello world",
-    };
     const [state, dispatch] = useReducer(reducer, defaultState);
     const [name, setName] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (name) {
+            dispatch({ type: "TESTING" });
         } else {
         }
     };
