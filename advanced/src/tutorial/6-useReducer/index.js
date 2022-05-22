@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from "react";
 import Modal from "./Modal";
-import { data } from "../../../data";
+import { data } from "../../data";
 // reducer function
 
 const reducer = (state, action) => {
@@ -20,6 +20,10 @@ const reducer = (state, action) => {
             isModalOpen: true,
             modalContent: "please enter a value",
         };
+    }
+
+    if (action.type === "CLOSE_MODAL") {
+        return { ...state, isModalOpen: false };
     }
     throw new Error("no matching action type");
 };
@@ -43,10 +47,17 @@ const Index = () => {
             dispatch({ type: "NO_VALUE" });
         }
     };
-
+    const closeModal = () => {
+        dispatch({ type: "CLOSE_MODAL" });
+    };
     return (
         <>
-            {state.isModalOpen && <Modal modalContent={state.modalContent} />}
+            {state.isModalOpen && (
+                <Modal
+                    closeModal={closeModal}
+                    modalContent={state.modalContent}
+                />
+            )}
             <form onSubmit={handleSubmit}>
                 <div>
                     <input
