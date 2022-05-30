@@ -17,6 +17,7 @@ import Navbar from "./Navbar";
 const ReactRouterSetup = () => {
     return (
         <Router>
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
